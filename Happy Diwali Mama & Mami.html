@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Diwali Mama &amp; Mami</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Great+Vibes&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{height:100%;margin:0;overflow:hidden;background:#04030c;color:#fff;font-family:'Tiro Devanagari Hindi',Georgia,serif}
+body{background:linear-gradient(#02020a 0%,#0a0820 55%,#2a1230 85%,#4a1c2c 100%)}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+.ui{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;padding:20px 14px 0;box-sizing:border-box;pointer-events:none;perspective:900px}
+.t{text-align:center;transform-style:preserve-3d;transition:transform .15s ease-out}
+.k{font:600 12px/1 'Cinzel',Georgia,serif;letter-spacing:.45em;color:#e8c26a;opacity:.85}
+h1{margin:10px 0 0;font:800 clamp(36px,11vw,76px)/1 'Cinzel',Georgia,serif;letter-spacing:.04em;background:linear-gradient(180deg,#fff6d0 0%,#ffd86b 40%,#c98a1c 70%,#ffe8a0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #6b3d05) drop-shadow(0 6px 0 #3d2203) drop-shadow(0 0 22px rgba(255,170,40,.55));animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 2px 0 #6b3d05) drop-shadow(0 6px 0 #3d2203) drop-shadow(0 0 38px rgba(255,190,70,.9))}}
+.n{font:400 clamp(44px,15vw,100px)/1.1 'Great Vibes',cursive;color:#ffb3d0;margin-top:2px;text-shadow:0 0 24px rgba(255,90,160,.7),0 4px 14px rgba(0,0,0,.6)}
+.h{margin-top:8px;font-size:clamp(15px,4.4vw,20px);color:#f6dca0;opacity:.95}
+#msg{position:fixed;left:50%;bottom:210px;transform:translate(-50%,10px);opacity:0;z-index:4;max-width:84vw;text-align:center;padding:11px 18px;border-radius:30px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,215,120,.35);font-size:15px;color:#fff3cf;transition:.5s;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#msg.on{opacity:1;transform:translate(-50%,0)}
+.bar{position:fixed;left:0;right:0;bottom:78px;display:flex;justify-content:center;gap:12px;z-index:5;pointer-events:auto;padding:0 10px}
+.b{width:96px;padding:12px 4px 10px;border-radius:20px;border:1px solid rgba(255,215,120,.4);background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.04));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#ffe9b0;font:600 12px 'Cinzel',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.3);transition:transform .15s;-webkit-tap-highlight-color:transparent}
+.b:active{transform:scale(.93) translateY(2px)}
+.b svg{width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(255,180,60,.6))}
+.snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:6;pointer-events:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,215,120,.3);color:#ffe9b0;border-radius:20px;padding:6px 12px;font:600 11px 'Cinzel',serif;cursor:pointer}
+.city{position:fixed;left:0;right:0;bottom:0;height:120px;pointer-events:none;z-index:3}
+.city svg{position:absolute;left:0;bottom:0;width:100%;height:92px}
+.dy{position:absolute;bottom:6px;left:0;right:0;display:flex;justify-content:space-around;padding:0 4%}
+.d{position:relative;width:30px;height:12px;border-radius:0 0 30px 30px;background:linear-gradient(#d2691e,#6e2f0c);box-shadow:0 0 30px 8px rgba(255,150,30,.45)}
+.d::before{content:"";position:absolute;left:11px;top:-17px;width:8px;height:18px;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;background:linear-gradient(#fff6c0,#ffb020 60%,#ff6a00);box-shadow:0 0 14px 5px rgba(255,170,40,.85);animation:fk .25s infinite alternate;transform-origin:50% 100%}
+.d:nth-child(even)::before{animation-duration:.33s}
+@keyframes fk{from{transform:scale(1,1) skewX(-4deg)}to{transform:scale(.88,1.12) skewX(5deg)}}
+#ov{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,rgba(60,20,70,.93),rgba(4,3,12,.98));text-align:center;transition:opacity .8s;padding:20px}
+#ov.off{opacity:0;pointer-events:none}
+.ovt{font:800 clamp(26px,8vw,44px)/1.25 'Cinzel',Georgia,serif;color:#ffd86b;text-shadow:0 0 24px rgba(255,170,40,.6)}
+#go{font:600 18px 'Cinzel',Georgia,serif;padding:15px 28px;border-radius:40px;border:1px solid #ffd86b;background:linear-gradient(#ffcf5a,#e08a10);color:#3a1a00;cursor:pointer;box-shadow:0 0 30px rgba(255,170,40,.6);animation:pl 1.4s infinite alternate}
+@keyframes pl{to{transform:scale(1.07)}}
+#ov small{color:#f6dca0;opacity:.8}
+.mtr{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:12px;z-index:6;max-width:55vw;background:rgba(255,255,255,.1);border:1px solid rgba(255,215,120,.3);color:#ffe9b0;border-radius:14px;padding:6px 10px;font:600 10px/1.3 'Cinzel',serif;pointer-events:none}
+.pop{position:fixed;font-size:30px;z-index:7;pointer-events:none;opacity:0;animation:up 1.8s ease-out forwards}
+@keyframes up{0%{opacity:1;transform:translateY(0) scale(.6)}100%{opacity:0;transform:translateY(-140px) scale(1.5) rotate(15deg)}}
+.sh{animation:sh .55s}
+@keyframes sh{0%,100%{transform:none}20%{transform:translate(-10px,7px)}40%{transform:translate(10px,-7px)}60%{transform:translate(-6px,-5px)}80%{transform:translate(6px,5px)}}
+#fl{position:fixed;inset:0;background:#fff;opacity:0;z-index:2;pointer-events:none}
+</style></head>
+<body id="bd">
+<canvas id="cv"></canvas><div id="fl"></div>
+<button class="snd" id="snd">SOUND: ON</button>
+<div class="mtr" id="mtr">Dhamaka meter: 0</div>
+<div id="ov"><div class="k">✦ SHUBH DIWALI ✦</div><div class="ovt">Mama &amp; Mami ke liye<br>ek dhamakedaar surprise</div><button id="go">🪔 Dhamaka shuru karo</button><small>Sound ON rakhna, thoda tez hai 😄</small></div>
+<div class="ui"><div class="t" id="t">
+  <div class="k">✦ SHUBH DIWALI ✦</div>
+  <h1>Happy Diwali</h1>
+  <div class="n">Mama &amp; Mami</div>
+  <div class="h">दीपावली की हार्दिक शुभकामनाएँ</div>
+</div></div>
+<div id="msg"></div>
+<div class="bar">
+  <button class="b" id="bA"><svg viewBox="0 0 40 40" fill="none"><path d="M13 36l3-18h8l3 18z" fill="#c0392b" stroke="#ffd86b" stroke-width="1.5"/><path d="M20 17c0-6-6-8-7-13M20 17c0-7 1-10 0-14M20 17c0-6 6-8 7-13" stroke="#ffcf5a" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="4" r="1.6" fill="#fff"/><circle cx="28" cy="4" r="1.6" fill="#fff"/></svg>Mami ka Anar</button>
+  <button class="b" id="bR"><svg viewBox="0 0 40 40" fill="none"><path d="M22 6l-5 22" stroke="#ffd86b" stroke-width="2"/><path d="M20 4l6 6-6 16-6-16z" transform="rotate(14 20 15)" fill="#e74c3c" stroke="#ffd86b" stroke-width="1.5"/><path d="M17 32l1 5M21 32v6M25 32l-1 5" stroke="#ffb020" stroke-width="2" stroke-linecap="round"/></svg>Rocket</button>
+  <button class="b" id="bB"><svg viewBox="0 0 40 40" fill="none"><circle cx="18" cy="24" r="12" fill="#222" stroke="#ffd86b" stroke-width="1.5"/><path d="M26 14c3-4 6-3 8-7" stroke="#cfa" stroke-width="2" stroke-linecap="round"/><path d="M34 3l1 4M31 5l4 1M36 5l-2 2" stroke="#ffcf5a" stroke-width="2" stroke-linecap="round"/><path d="M12 22a8 8 0 0 1 6-6" stroke="#fff" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/></svg>Mama ka Bomb</button>
+</div>
+<div class="city">
+ <svg viewBox="0 0 400 100" preserveAspectRatio="none"><path fill="#06040f" d="M0 100V72h28V58h18v14h24V60h22v12h26V62Q140 18 162 62v10h16l10-34 10 34h26V58h22v14h24V64h22v8h26V56h22v16h26V62h22v10h12v28z"/><path fill="#06040f" d="M188 38v-10M186 28h4"/><g id="w" fill="#ffc861"><rect x="34" y="62" width="4" height="5"/><rect x="76" y="64" width="4" height="5"/><rect x="100" y="66" width="3" height="4"/><rect x="232" y="62" width="4" height="5"/><rect x="274" y="67" width="4" height="4"/><rect x="326" y="62" width="4" height="5"/><rect x="372" y="66" width="3" height="4"/><rect x="186" y="55" width="4" height="7"/></g></svg>
+ <div class="dy"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div>
+</div>
+<script>
+const cv=document.getElementById('cv'),g=cv.getContext('2d');let W,H,D=1;
+function rs(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;g.setTransform(D,0,0,D,0,0)}
+rs();addEventListener('resize',rs);
+const F=600,P=[],RK=[],FL=[],ST=[];let sOn=true,started=false,cnt=0,mt2,ac,nb;
+for(let i=0;i<110;i++)ST.push({x:Math.random(),y:Math.random()*.75,r:Math.random()*1.2+.2,p:Math.random()*6});
+/* audio */
+function A(){if(!sOn)return null;if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();nb=ac.createBuffer(1,ac.sampleRate*2,ac.sampleRate);const d=nb.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}return ac}
+function noise(f,type,vol,dur,delay){const c=A();if(!c)return;const s=c.createBufferSource();s.buffer=nb;const fl=c.createBiquadFilter();fl.type=type;fl.frequency.value=f;const gn=c.createGain(),t=c.currentTime+(delay||0);gn.gain.setValueAtTime(vol,t);gn.gain.exponentialRampToValueAtTime(.001,t+dur);s.connect(fl);fl.connect(gn);gn.connect(c.destination);s.start(t);s.stop(t+dur)}
+function boom(v){noise(160,'lowpass',v*1.4,1.3,0);noise(1200,'highpass',v*.25,.25,0);for(let i=0;i<6;i++)noise(3000,'highpass',v*.15,.05,.25+Math.random()*.7)}
+function whistle(){const c=A();if(!c)return;const o=c.createOscillator(),gn=c.createGain(),t=c.currentTime;o.frequency.setValueAtTime(500,t);o.frequency.exponentialRampToValueAtTime(1800,t+1);gn.gain.setValueAtTime(.04,t);gn.gain.linearRampToValueAtTime(0,t+1);o.connect(gn);gn.connect(c.destination);o.start(t);o.stop(t+1)}
+/* fireworks */
+function proj(p){const k=F/(F+p.z);return[W/2+p.x*k,H/2+p.y*k,k]}
+function add(x,y,vx,vy,vz,h,o){P.push(Object.assign({x,y,z:0,px:null,py:null,vx,vy,vz,h,l:1,d:.012,g:.05,dr:.972,r:1.6,cr:0},o))}
+function shell(sx,sy,type,vol){const x=sx-W/2,y=sy-H/2,h=Math.random()*360;type=type||['peony','peony','ring','willow','dual','crackle'][Math.random()*6|0];
+FL.push({x:sx,y:sy,r:30,a:.55,h});boom(vol||.5);meter();
+if(type=='willow'){for(let i=0;i<130;i++){const a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),s=2+Math.random()*4.5;add(x,y,s*Math.sin(b)*Math.cos(a),s*Math.sin(b)*Math.sin(a),s*Math.cos(b),42,{d:.0055,g:.07,dr:.98})}return}
+if(type=='ring'){const ax=Math.random()*3,ay=Math.random()*3;for(let i=0;i<110;i++){const a=i/110*6.283;let vx=Math.cos(a)*7,vy=Math.sin(a)*7,vz=0,t=vy*Math.cos(ax)-vz*Math.sin(ax);vz=vy*Math.sin(ax)+vz*Math.cos(ax);vy=t;t=vx*Math.cos(ay)+vz*Math.sin(ay);vz=-vx*Math.sin(ay)+vz*Math.cos(ay);vx=t;add(x,y,vx,vy,vz,h,{d:.014})}return}
+const n=type=='dual'?260:170,h2=(h+150)%360;for(let i=0;i<n;i++){const a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),s=(type=='dual'&&i<90?4:8)*(.82+Math.random()*.18);add(x,y,s*Math.sin(b)*Math.cos(a),s*Math.sin(b)*Math.sin(a),s*Math.cos(b),(type=='dual'&&i<90)?h2:h,{cr:type=='crackle'?1:0})}}
+function rocket(sx,ty,type,vol){RK.push({x:sx-W/2,y:H-130-H/2,vy:-(11+Math.random()*3),ty:ty-H/2,type,vol,w:Math.random()*6});whistle()}
+function anar(sx,ms){const t0=performance.now();noise(5000,'highpass',.1,ms/1000,0);(function f(){if(performance.now()-t0>ms)return;for(let i=0;i<7;i++){const a=Math.random()*6.283,s=Math.random()*2.5;add(sx-W/2,H/2-150,Math.cos(a)*s*.7,-(8+Math.random()*7),Math.sin(a)*s*3,28+Math.random()*14,{d:.017,g:.2,r:1.5,dr:.99})}requestAnimationFrame(f)})()}
+function bomb(){const f=document.getElementById('fl');f.style.transition='none';f.style.opacity=.75;setTimeout(()=>{f.style.transition='opacity .6s';f.style.opacity=0},40);
+bd.classList.remove('sh');void bd.offsetWidth;bd.classList.add('sh');shell(W/2,H*.3,'dual',1.5);[200,420,650].forEach(t=>setTimeout(()=>shell(W*(.2+Math.random()*.6),H*(.15+Math.random()*.25),null,.8),t))}
+/* messages */
+const M=["Mama, bomb se mat daro — Mami ke gusse se daro 😄","Mami, laddoo chhupa ke rakhna, hum aa rahe hain!","Mama ka bomb itna tez, padosi ne bhi Happy Diwali bol diya","Aaj mithai ki calories ginti mein nahi aati","Mama, fuse jalakar bhaagna mat bhoolna 🏃","Mami ka anar: sundar, chamakdaar aur bilkul safe ✨","Mama, ye aapka bomb tha ya aapki hansi?","Mami, aaj ka rangoli aapka, aur credit bhi aapka 🪔"];
+const mg=document.getElementById('msg');let mt;function say(s){mg.textContent=s||M[Math.random()*M.length|0];mg.classList.add('on');clearTimeout(mt);mt=setTimeout(()=>mg.classList.remove('on'),3200)}
+/* buttons */
+const ctr=e=>{const r=e.currentTarget.getBoundingClientRect();return r.left+r.width/2};
+bA.onclick=e=>{anar(ctr(e),3200);pop(['😍','✨','🤩'],6);talk([['Mami','Mera anar dekho, kitna sundar chamak raha hai ✨'],['Mama','Waah! Bilkul aapki tarah chamakta hai. Bas gussa thoda kam hota to aur achha 😄']])};
+bR.onclick=e=>{rocket(ctr(e),H*(.15+Math.random()*.2),null,.7);pop(['🚀','🎆'],4);talk([['Mama','Rocket chhodi! Seedha chand pe jayegi 🚀'],['Mami','Bas padosi ki chhat pe mat girna, wahan kapde sukh rahe hain 😂']])};
+bB.onclick=e=>{bomb();pop(['🙉','🐈','😵','🐕','🙈','😂'],10);talk([['Mama','Ab dekhna dhamaka! Sab peeche ho jao!'],['Mami','BOOM! Mama, kaan abhi bhi hain na? 😂'],['Mama','Kya bola? Ek baar phir bolo... 🙉']])};
+cv.addEventListener('pointerdown',e=>{rocket(e.clientX,e.clientY,null,.7);if(Math.random()<.35)say()});
+const snd_=document.getElementById('snd');
+snd_.onclick=()=>{sOn=!sOn;snd_.textContent='SOUND: '+(sOn?'ON':'OFF');if(sOn){A();ac.resume&&ac.resume();boom(.4)}};
+/* tilt */
+const T=document.getElementById('t');addEventListener('pointermove',e=>{T.style.transform=`rotateY(${(e.clientX/W-.5)*26}deg) rotateX(${-(e.clientY/H-.5)*16}deg)`});
+let ti=0;addEventListener('deviceorientation',e=>{if(e.gamma!=null)T.style.transform=`rotateY(${Math.max(-20,Math.min(20,e.gamma))*.9}deg) rotateX(${Math.max(-12,Math.min(12,(e.beta-45)*-.3))}deg)`});
+/* loop */
+function loop(t){g.globalCompositeOperation='source-over';g.fillStyle='rgba(4,3,12,.2)';g.fillRect(0,0,W,H);
+for(const s of ST){g.globalAlpha=.35+.35*Math.sin(t/700+s.p);g.fillStyle='#fff';g.fillRect(s.x*W,s.y*H,s.r,s.r)}g.globalAlpha=1;
+g.globalCompositeOperation='lighter';
+for(let i=FL.length-1;i>=0;i--){const f=FL[i];f.r+=14;f.a*=.9;if(f.a<.01){FL.splice(i,1);continue}const gr=g.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r*5);gr.addColorStop(0,`hsla(${f.h},100%,70%,${f.a})`);gr.addColorStop(1,'hsla(0,0%,0%,0)');g.fillStyle=gr;g.fillRect(f.x-f.r*5,f.y-f.r*5,f.r*10,f.r*10)}
+for(let i=RK.length-1;i>=0;i--){const r=RK[i];r.y+=r.vy;r.vy*=.985;r.x+=Math.sin((r.y+r.w)*.05)*.4;
+for(let j=0;j<2;j++)add(r.x,r.y,(Math.random()-.5)*.8,1+Math.random()*1.5,0,38,{d:.05,g:.03,r:1.1});
+g.fillStyle='#fff';g.beginPath();g.arc(W/2+r.x,H/2+r.y,2.2,0,6.283);g.fill();
+if(r.y<=r.ty||r.vy>-2.2){shell(W/2+r.x,H/2+r.y,r.type,r.vol);RK.splice(i,1)}}
+for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;p.z+=p.vz;p.vy+=p.g;p.vx*=p.dr;p.vy*=p.dr<.98?1:.99;p.vz*=p.dr;p.l-=p.d;
+if(p.cr&&p.l<.3){p.cr=0;for(let j=0;j<5;j++)add(p.x,p.y,(Math.random()-.5)*4,(Math.random()-.5)*4,(Math.random()-.5)*4,50,{h:50,d:.06,r:1,g:.03});}
+if(p.l<=0||p.z<-F+60){P.splice(i,1);continue}
+const[x,y,k]=proj(p),L=Math.max(p.l,0);g.strokeStyle=`hsla(${p.h},100%,${50+40*L*L}%,${L})`;g.lineWidth=Math.max(p.r*k,.5);g.lineCap='round';
+if(p.px!=null){g.beginPath();g.moveTo(p.px,p.py);g.lineTo(x,y);g.stroke()}
+p.px=x;p.py=y}
+requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+setInterval(()=>{if(started&&P.length<700&&!RK.length)rocket(W*(.15+Math.random()*.7),H*(.1+Math.random()*.28),null,.5)},1700);
+const mtr=document.getElementById('mtr');
+function meter(){cnt++;mtr.textContent='Dhamaka meter: '+cnt+' — '+(cnt<8?'abhi warm-up':cnt<25?'padosi jaag gaye':cnt<50?'padosi ne chhat se hello bola':'laddoo bhijwao, police aa rahi hai')}
+function pop(a,n){for(let i=0;i<n;i++){const d=document.createElement('div');d.className='pop';d.textContent=a[i%a.length];d.style.left=(6+Math.random()*80)+'vw';d.style.top=(40+Math.random()*25)+'vh';d.style.animationDelay=(i*.12)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}}
+const col=l=>'<b style="color:'+(l[0]=='Mama'?'#8fd3ff':'#ffb3d0')+'">'+l[0]+':</b> '+l[1];
+function talk(c){clearTimeout(mt2);let i=0;(function n(){if(i>=c.length){mt2=setTimeout(()=>mg.classList.remove('on'),3400);return}mg.innerHTML=col(c[i++]);mg.classList.add('on');mt2=setTimeout(n,2800)})()}
+const B=[[['Mama','Mami, bomb laga diya hai, ab 10 kadam peeche ho jao.'],['Mami','Pehle aap peeche jao, pichhli baar aapki chappal udd gayi thi 😂']],[['Mami','Aaj kitne laddoo khaye?'],['Mama','Sirf ek... plate mein 😇']],[['Mama','Ye anar to bahut mast hai!'],['Mami','Haan, bas haath mein pakad ke mat jalana.']],[['Mami','Rangoli dekho, kaisi bani?'],['Mama','Bahut sundar! (par rangoli ke upar rocket kisne chhodi?)']],[['Mama','Fuse jala di, ab bhaago!'],['Mami','Aap pehle bhaag gaye, bomb abhi bhi wahin pada hai 🙈']],[['Mami','Padosi bol rahe hain, awaaz kam karo.'],['Mama','Unko bolo, Diwali mein awaaz hi to khushi hai!']],[['Mama','Mami, aap to meri Diwali ki roshni ho.'],['Mami','Rehne do, bomb ka darr chhupane ka naya tarika hai? 😄']]];
+function say(s){if(typeof s=='string'){mg.textContent=s;mg.classList.add('on');clearTimeout(mt2);mt2=setTimeout(()=>mg.classList.remove('on'),3200)}else talk(B[Math.random()*B.length|0])}
+document.getElementById('go').onclick=()=>{started=true;A();ac&&ac.resume&&ac.resume();document.getElementById('ov').classList.add('off');setTimeout(()=>{rocket(W/2,H*.25,'dual',.9);rocket(W*.25,H*.2,null,.7);rocket(W*.75,H*.2,null,.7);talk([['Mama','Happy Diwali Mami!'],['Mami','Happy Diwali Mama! Laddoo kahan hain? 🪔']])},300)};
+setInterval(()=>{document.getElementById('w').style.opacity=.6+Math.random()*.4},400);
+</script>
+</body></html>
